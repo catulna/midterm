@@ -32,8 +32,8 @@ bool Game::init(const char* title, int xpos, int ypos, int height, int width, in
     m_destnationRectangle.w = m_soureceRectangle.w;
     m_destnationRectangle.h = m_soureceRectangle.h;
 
-    m_destnationRectangle.x = m_soureceRectangle.x = 0;
-    m_destnationRectangle.y = m_soureceRectangle.y = 0;
+    m_destnationRectangle.x = 40;
+    m_destnationRectangle.y = 30;
     
 m_bRunning = true;
 return true;
