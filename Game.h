@@ -5,6 +5,7 @@
 #include "TextureManager.h"
 #include "GameObject.h"
 #include "Player.h"
+#include <vector>
 
 class Game {
   public:
@@ -24,8 +25,10 @@ class Game {
     bool m_bRunning;
     int m_currentFrame;
 
-    GameObject m_go;
-    Player m_player;
+    //GameObject m_go;
+    //Player m_player;
+
+    std::vector<GameObject*> m_gameObjects;
 
 };
 
