@@ -1,6 +1,5 @@
 #include "Game.h"
-
-//Loom 학생용 계정 인증이 안되어서 영상을 찍을 수 없어 일단 멈췄습니다... 
+#include <iostream>
 
 Game* g_game = 0;
 
@@ -10,8 +9,26 @@ bool g_bRunning = false;
 
 int main(int argc, char* args[])
 {
+  if(TheGame::Instance()->init("Chapter1",100,100,640,480,false))
+  {
+    while(TheGame::Instance()->running())
+    {
+      TheGame::Instance()->handleEvents();
+    TheGame::Instance()->update();
+    TheGame::Instance()->render();
+    SDL_Delay(10);
+    }
+    
+  }
+  else
+  {
+    std::cout << "game init failure" << SDL_GetError() << "\n";
+    return -1;
+  }
 
-  g_game = new Game();
+  TheGame::Instance()->clean();
+
+  /*g_game = new Game();
   g_game->init("Setting up SDL 10/22", 100, 100, 640, 480, 0);
   while (g_game->running())
   {
@@ -22,6 +39,8 @@ int main(int argc, char* args[])
 
   }
 
-  g_game->clean();
+  g_game->clean();*/
+
+
   return 0;
 }  
