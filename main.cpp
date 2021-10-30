@@ -1,5 +1,7 @@
 #include "Game.h"
 
+//Loom 학생용 계정 인증이 안되어서 영상을 찍을 수 없어 일단 멈췄습니다... 
+
 Game* g_game = 0;
 
 SDL_Window* g_pWindow = 0;
